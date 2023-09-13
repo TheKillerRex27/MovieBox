@@ -2,3 +2,19 @@ body {
   margin: 0;
   font-family: 'DM Sans', sans-serif;
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: gainsboro;
+}
+
+::-webkit-scrollbar-thumb {
+  background: gray;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6B6B6B;
+}
