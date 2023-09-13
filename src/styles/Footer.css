@@ -1,0 +1,31 @@
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.25rem;
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.links {
+    display: flex;
+    align-items: flex-start;
+    gap: 3rem;
+}
+
+.links a {
+    color: #111827;
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+.bottom-text {
+    margin: 0;
+    color: #6B7280;
+    font-size: 1rem;
+    font-weight: 700;
+}
