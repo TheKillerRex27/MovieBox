@@ -5,7 +5,9 @@ function MovieDetails() {
 
     return (
         <>
+          <aside>
             
+          </aside>  
         </>
     )
 }
