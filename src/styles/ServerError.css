@@ -1,0 +1,20 @@
+.server-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.server-error img {
+    height: 20rem;
+    width: 40rem;
+}
+
+.go-home-button {
+    background: blue;
+    color: white;
+    font-weight: 600;
+    margin-top: 2rem;
+    padding: 1rem 3rem;
+    text-decoration: none;
+}

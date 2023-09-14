@@ -25,7 +25,7 @@ function Navbar (props) {
     
     return (
         <nav className="navbar" style={props.color}>
-            <Link to={"/"}>
+            <Link to={"/"} style={{ textDecoration: 'none' }}>
                 <span className="logo">
                     <img src={logo} />
                     MovieBox

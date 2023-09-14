@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import MovieCard from './MovieCard';
 import '../styles/TopMovies.css'
 
 function TopMovies () {
+
+    const navigate = useNavigate()
 
     const API_KEY = '1939e08fcfc1b966f48087ee877ba03b';
     const URL = `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}`;
@@ -17,11 +20,15 @@ function TopMovies () {
             const result = await fetch(URL)
             result.json().then(data => {
                 setMoviesArr(data.results.slice(0, 10));
+            }).catch(err => {
+                navigate('/server-error');
             })
 
             const genreResult = await fetch(genreURL)
             genreResult.json().then(data => {
                 setGenreList(data.genres)
+            }).catch(err => {
+                navigate('/server-error');
             })
         }
         fetchData();
@@ -51,6 +58,7 @@ function TopMovies () {
                 {moviesArr.map( movie => (
                     <MovieCard 
                         key={movie.id}
+                        id={movie.id}
                         title={movie.title}
                         poster={'https://image.tmdb.org/t/p/original/' + movie.poster_path}
                         releaseDate={movie.release_date}

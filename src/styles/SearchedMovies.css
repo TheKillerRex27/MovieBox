@@ -7,6 +7,12 @@ section {
     font-weight: 700;
 }
 
+.loading-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .search-results {
     display: grid;
     grid-template-columns: repeat(4, auto);

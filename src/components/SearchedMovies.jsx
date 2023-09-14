@@ -2,11 +2,14 @@ import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import Navbar from "./Navbar";
 import MovieCard from "./MovieCard";
+import loadingGif from '../assets/Spinner-1s-200px.svg'
 import Footer from "./Footer";
+import notFound from "../assets/image-not-found.png"
 import "../styles/SearchedMovies.css";
 
 function SearchedMovies() {
     
+    const [ isLoading, setIsLoading ] = useState(true)
     const [ searchResults, setSearchResults ] = useState([]);
     const [ genreList, setGenreList] = useState([]);
 
@@ -24,6 +27,11 @@ function SearchedMovies() {
             const result = await fetch(searchURL)
             result.json().then(data => {
                 setSearchResults(data.results.slice(0, 10));
+                setTimeout(() => {
+                    setIsLoading(false);
+                }, 1000)
+            }).catch(err => {
+                navigate('/server-error');
             })
 
             const genreResult = await fetch(genreURL)
@@ -53,18 +61,23 @@ function SearchedMovies() {
 
             <section>
                 <p className="results-title">Results ({searchResults.length})</p>
-                <div className="search-results">
+                {isLoading ? (
+                    <div className="loading-container">
+                        <img src={loadingGif} className="loading-gif" />
+                    </div>
+                ) : (<div className="search-results">
                     {searchResults.map((movie) => (
                         <MovieCard
                             key={movie.id}
                             title={movie.title}
-                            poster={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+                            poster={movie.poster_path === null ? notFound : `https://image.tmdb.org/t/p/original/${movie.poster_path}`}
                             releaseDate={movie.release_date}
                             rating={movie.vote_average}
                             genres={getGenres(movie)}
                         />
                     ))}
-            </div>
+                    </div>
+                )}
             </section>
             <Footer />
         </>
