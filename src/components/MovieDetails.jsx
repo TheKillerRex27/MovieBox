@@ -3,4 +3,9 @@ import "../styles/MovieDetails.css";
 
 function MovieDetails() {
 
+    return (
+        <>
+            
+        </>
+    )
 }
