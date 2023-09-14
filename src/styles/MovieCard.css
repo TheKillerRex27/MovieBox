@@ -19,6 +19,7 @@
 
 .card-title {
     margin: 0;
+    width: 15rem;
     color: #111827;
     font-size: 1.125rem;
     font-weight: 700;
@@ -26,13 +27,14 @@
 
 .movie-ratings {
     display: flex;
-    width: 15.625rem;
+    width: 15rem;
     justify-content: space-between;
     align-items: flex-start;
 }
 
 .genre {
     display: flex;color: #9CA3AF;
+    width: 15rem;
     font-size: 0.75rem;
     font-weight: 700;
     gap: 0.3rem;

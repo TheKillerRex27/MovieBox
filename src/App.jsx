@@ -1,16 +1,17 @@
 import React from 'react'
-import Header from './components/Header.jsx'
-import TopMovies from './components/TopMovies.jsx'
-import Footer from './components/Footer.jsx'
+import { Route, Routes } from 'react-router-dom'
+import HomePage from './components/HomePage.jsx'
+import SearchedMovies from './components/SearchedMovies.jsx'
 import './App.css'
 
 function App() {
 
   return (
     <>
-      <Header />
-      <TopMovies />
-      <Footer />
+      <Routes>
+        <Route path='/' element={ <HomePage /> }/>
+        <Route path='/search' element={ <SearchedMovies /> }/>
+      </Routes>
     </>
   )
 

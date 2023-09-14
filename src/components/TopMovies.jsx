@@ -29,17 +29,17 @@ function TopMovies () {
 
     function getGenres(movie) {
         let genre = [];
-      
+    
         movie.genre_ids.forEach((id) => {
-          const genreObject = genreList.find((obj) => obj.id === id);
-          if (genreObject) {
-            genre.push(genreObject.name);
-          }
+            const genreObject = genreList.find((obj) => obj.id === id);
+            if (genreObject) {
+                genre.push(genreObject.name);
+            }
         });
-      
+    
         return genre.join(', ');
-      }
-      
+    }
+    
 
     return (
         <section className='top-movies'>

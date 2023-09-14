@@ -1,20 +1,38 @@
 import React from "react";
-import logo from '../assets/logo.png'
-import menu from '../assets/menu.svg'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import '../styles/Navbar.css'
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import logo from '../assets/logo.png';
+import menu from '../assets/menu.svg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import '../styles/Navbar.css';
 
-function Navbar () {
+function Navbar (props) {
+
+    const navigate = useNavigate()
+    const [searchParams, setSearchParams] = useSearchParams();
+
+    function handleSearchSubmit(event) {
+        event.preventDefault();
+        const searchQuery = event.target.elements.search.value;
+
+        setSearchParams({ query: searchQuery });
+
+        navigate(`/search?query=${encodeURIComponent(searchQuery)}`);
+
+        window.location.reload();
+
+    }
     
     return (
-        <nav className="navbar">
-            <span className="logo">
-                <img src={logo} />
-                MovieBox
-            </span>
-            <form className="search-bar">
-                <input type="text" placeholder="What do you want to watch?"/>
+        <nav className="navbar" style={props.color}>
+            <Link to={"/"}>
+                <span className="logo">
+                    <img src={logo} />
+                    MovieBox
+                </span>
+            </Link>
+            <form className="search-bar" onSubmit={handleSearchSubmit}>
+                <input id="search" name="search" type="text" placeholder="What do you want to watch?"/>
                 <button type="submit">
                     <FontAwesomeIcon icon={faSearch} />
                 </button>

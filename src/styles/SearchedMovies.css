@@ -1,0 +1,14 @@
+section {
+    margin: 3rem;
+}
+
+.results-title {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.search-results {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-row-gap: 7rem;
+}

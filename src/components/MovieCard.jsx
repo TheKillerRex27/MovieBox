@@ -1,5 +1,4 @@
 import React from "react";
-import poster from '../assets/stranger-things.png'
 import imdb from "../assets/imdb.png"
 import tomatoes from "../assets/tomatoes.png"
 import '../styles/MovieCard.css'
@@ -7,10 +6,10 @@ import '../styles/MovieCard.css'
 function MovieCard (props) {
 
     return (
-        <div className="movie-card">
-            <img src={props.poster} className="movie-poster"/>
-            <p className="movie-release-date">{props.releaseDate}</p>
-            <p className="card-title">{props.title}</p>
+        <div className="movie-card" data-testid="movie-card">
+            <img src={props.poster} className="movie-poster" data-testid="movie-poster"/>
+            <p className="movie-release-date" data-testid="movie-release-date">{props.releaseDate}</p>
+            <p className="card-title" data-testid="movie-title">{props.title}</p>
             <span className="movie-ratings">
                 <span className="rating">
                     <img src={imdb} className="imbd-logo" />
