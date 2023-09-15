@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import MovieCard from './MovieCard';
-import '../styles/TopMovies.css'
+import '../styles/TopMovies.css';
 
 function TopMovies () {
 
     const navigate = useNavigate()
 
     const API_KEY = '1939e08fcfc1b966f48087ee877ba03b';
-    const URL = `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}`;
-    const genreURL = `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}`
+    const URL = `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}`;
+    const genreURL = `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`;
 
     const [ moviesArr, setMoviesArr] = useState([])
     const [ genreList, setGenreList] = useState([])
