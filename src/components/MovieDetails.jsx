@@ -26,7 +26,7 @@ function MovieDetails() {
 
                 setTimeout(() => {
                     setIsLoading(false);
-                }, 2000);
+                }, 1000);
             }).catch(err => {
                 navigate('/server-error');
             })
@@ -55,16 +55,17 @@ function MovieDetails() {
                 {isLoading ? (
                     <img src={loadingGif} className="loading-gif" />
                 ) : (<>
-                    <div className="backdrop" style={{ backgroundImage: `url(${movieObj.backdrop_path ? `https://image.tmdb.org/t/p/original/${movieObj.backdrop_path}?api_key=${API_KEY}` : noBackdrop })` }} />
+                    <div className="backdrop" style={{ backgroundImage: `url(${movieObj.backdrop_path ? `https://image.tmdb.org/t/p/original${movieObj.backdrop_path}?api_key=${API_KEY}` : noBackdrop })` }} />
+                    <div className="backdrop-sm" style={{ backgroundImage: `url(${movieObj.poster_path ? `https://image.tmdb.org/t/p/original${movieObj.poster_path}?api_key=${API_KEY}` : noBackdrop })` }} />
                         <span>
                             <p className="title" data-testid="movie-title">{movieObj.title}</p>
                             <p>|</p>
-                            <p className="release-date" data-testid="movie-release-date">{movieObj.release_date}</p>
+                            <p className="title" data-testid="movie-release-date">{movieObj.release_date}</p>
                             <p>|</p>
-                            <p className="runtime" data-testid="movie-runtime">{movieObj.runtime}</p>
+                            <p className="title" data-testid="movie-runtime">{movieObj.runtime}</p>
                         </span>
                         <div className="movie-description">
-                            <p data-testid="movie-overview">{movieObj.overview}</p>
+                            <p className="movie-overview" data-testid="movie-overview">{movieObj.overview}</p>
                             <div className="movie-tags">
                                 <span className="label">Vote Count :</span>
                                 <p className="label-text">{movieObj.vote_count}</p>

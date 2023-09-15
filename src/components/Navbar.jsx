@@ -28,11 +28,11 @@ function Navbar (props) {
             <Link to={"/"} style={{ textDecoration: 'none' }}>
                 <span className="logo">
                     <img src={logo} />
-                    MovieBox
+                    <p>MovieBox</p>
                 </span>
             </Link>
             <form className="search-bar" onSubmit={handleSearchSubmit}>
-                <input id="search" name="search" type="text" placeholder="What do you want to watch?"/>
+                <input id="search" name="search" type="text" placeholder="Search"/>
                 <button type="submit">
                     <FontAwesomeIcon icon={faSearch} />
                 </button>

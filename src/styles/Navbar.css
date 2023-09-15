@@ -13,6 +13,10 @@
     font-weight: 700;
 }
 
+.logo p {
+    margin: 0;
+}
+
 .logo img {
     margin-right: 1.5rem;
     width: 3.125rem;
@@ -77,4 +81,21 @@
     height: 2.25rem;
     align-items: center;
     justify-content: center;
+}
+
+@media only screen and (max-width: 1200px){
+    .menu {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 600px){
+
+    .logo {
+        margin-right: 0.5rem;
+    }
+
+	.logo p {
+        display: none;
+    }
 }

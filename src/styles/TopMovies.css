@@ -24,4 +24,25 @@
     display: grid;
     grid-template-columns: repeat(4, auto);
     grid-row-gap: 7rem;
+    justify-content: space-around;
+}
+
+@media only screen and (max-width: 1200px){
+    .movie-list {
+        grid-template-columns: repeat(2, auto);
+    }
+}
+
+@media only screen and (max-width: 600px){
+	.movie-list {
+        grid-template-columns: repeat(1, auto);
+    }
+
+    .title p {
+        font-size: 1rem;
+    }
+
+    .title a {
+        font-size: 0.8rem;
+    }
 }

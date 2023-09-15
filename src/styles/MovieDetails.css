@@ -84,6 +84,10 @@
     height: 22rem;
 }
 
+.backdrop-sm {
+    display: none;
+}
+
 .loading-gif {
     margin: auto;
     border-radius: 50%;
@@ -93,7 +97,6 @@
 
 .movie-text {
     display: flex;
-    /* align-items: center; */
     justify-content: center;
     flex-direction: column;
     margin: 1rem;
@@ -114,10 +117,6 @@
     gap: 3rem;
 }
 
-.movie-description p {
-    width: 40rem;
-}
-
 .movie-tags {
     display: grid;
     grid-template-columns: 15rem 5rem;
@@ -136,4 +135,50 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+}
+
+@media only screen and (max-width: 1200px){
+    .backdrop {
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .movie-description {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .sidebar {
+        display: none;
+    }
+
+    .backdrop {
+        display: none;
+    }
+
+    .backdrop-sm {
+        display: block;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 40vh;
+    }
+
+    .movie-description {
+        gap: 0;
+    }
+
+    .title {
+        font-size: 0.8rem;
+    }
+
+    .movie-overview {
+        font-size: 0.8rem;
+    }
+
+    .movie-tags {
+        grid-template-columns: 45vw 40vw;
+    }
 }

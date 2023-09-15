@@ -15,6 +15,23 @@ section {
 
 .search-results {
     display: grid;
+    justify-content: space-around;
     grid-template-columns: repeat(4, auto);
     grid-row-gap: 7rem;
+}
+
+@media only screen and (max-width: 1200px){
+    .search-results {
+        grid-template-columns: repeat(2, auto);
+    }
+}
+
+@media only screen and (max-width: 600px){
+	.search-results {
+        grid-template-columns: repeat(1, auto);
+    }
+
+    .results-title {
+        font-size: 1rem;
+    }
 }
