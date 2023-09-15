@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import logo from '../assets/logo.png';
-import play from '../assets/play.png';
+import noBackdrop from '../assets/backdrop_not_available.png'
 import loadingGif from '../assets/Spinner-1s-200px.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faFilm ,faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
@@ -55,10 +55,7 @@ function MovieDetails() {
                 {isLoading ? (
                     <img src={loadingGif} className="loading-gif" />
                 ) : (<>
-                        <div className="fake-thumbnail">
-                            <img src={play} />
-                            <p>Watch Trailer</p>
-                        </div>
+                    <div className="backdrop" style={{ backgroundImage: `url(${movieObj.backdrop_path ? `https://image.tmdb.org/t/p/original/${movieObj.backdrop_path}?api_key=${API_KEY}` : noBackdrop })` }} />
                         <span>
                             <p className="title" data-testid="movie-title">{movieObj.title}</p>
                             <p>|</p>

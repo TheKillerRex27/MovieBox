@@ -78,35 +78,10 @@
     flex-shrink: 0;
 }
 
-.fake-thumbnail {
-    display: flex;
-    cursor: pointer;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-image: url('../assets/fake-thumbnail.png');
+.backdrop {
     background-size: cover;
     width: 100%;
     height: 22rem;
-}
-
-.fake-thumbnail img {
-    padding: 1rem;
-    border-radius: 50%;
-    background-color: rgba(232, 232, 232, 0.2);
-}
-
-.fake-thumbnail img:hover {
-    background-color: rgba(232, 232, 232, 0.5);
-}
-
-.fake-thumbnail p {
-    margin: 0;
-    color: #E8E8E8;
-    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-    font-family: 'Poppins';
-    font-size: 1.25rem;
-    font-weight: 500;
 }
 
 .loading-gif {

@@ -69,6 +69,7 @@ function SearchedMovies() {
                     {searchResults.map((movie) => (
                         <MovieCard
                             key={movie.id}
+                            id={movie.id}
                             title={movie.title}
                             poster={movie.poster_path === null ? notFound : `https://image.tmdb.org/t/p/original/${movie.poster_path}`}
                             releaseDate={movie.release_date}
